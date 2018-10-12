@@ -27,4 +27,18 @@ async def on_message(message):
             return_message = "The current roles for this server are: " + str(server_roles)
         await client.send_message(message.channel, return_message)
 
+    if(msg_chk.find("!roll ") == 0):
+        params = msg_chk[6:]
+        n = int(params.split("d")[0])
+        d = int(params.split("d")[1])
+        if(not math.isnan(d) and not math.isnan(n)):
+            list = []
+            sum = 0
+            for i in range(0,n):
+                rng = random.randint(1,d)
+                list.append(rng)
+                sum = sum + rng
+            msg = message.author.mention+' rolled ' + str(list) + '. Total is ' + str(sum)
+            await client.send_message(message.channel, msg)
+
 client.run(TOKEN)
