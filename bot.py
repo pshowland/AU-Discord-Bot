@@ -95,5 +95,7 @@ async def on_message(message):
                     pass
         new_im.save(os.environ.get("WORKING_PATH")+"pixel/"+file["filename"].split(".")[0]+"_icon."+file["filename"].split(".")[1])
         await client.send_file(message.channel, os.environ.get("WORKING_PATH")+"pixel/"+file["filename"].split(".")[0]+"_icon."+file["filename"].split(".")[1])
+        os.remove(os.environ.get("WORKING_PATH")+"pixel/"+file["filename"])
+        os.remove(os.environ.get("WORKING_PATH")+"pixel/"+file["filename"].split(".")[0]+"_icon."+file["filename"].split(".")[1])
 
 client.run(TOKEN)
