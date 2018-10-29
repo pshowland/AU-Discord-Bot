@@ -56,6 +56,10 @@ async def on_message(message):
         pps = -1
         width = im.size[0]
         height = im.size[1]
+        if(width > 1080 or height > 1080):
+            msg = "Image is too large! Please try a smaller image."
+            await client.send_message(message.channel, msg)
+            return
         if(width > height):
             pps = math.ceil(width/output_size)
         else:
