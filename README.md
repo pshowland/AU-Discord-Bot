@@ -8,4 +8,9 @@ bot.py is the control script that controls how the bot handles messages and what
 
 # What does it do?
 
-Currently? Nothing. But I plan on adding a bunch of neat features that hopefully make various things easier or more convenient.
+This bot currently only does a few things.
+
+* !!aubout returns a simple about message.
+* !!roles returns the list of current roles for the server.
+* !!roll XdY rolls X Y-sided dice and returns the result.
+* !!pixel takes an image that is 1080x1080 or less and returns an icon version.
